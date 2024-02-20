@@ -1,5 +1,7 @@
 #ticket-cost>div{
 display: flex;
-gap: 8.25rem;
+gap: 110px;
+padding-left: 5px;
 
 }
+

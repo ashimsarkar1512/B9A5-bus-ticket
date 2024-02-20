@@ -12,14 +12,15 @@ btn.addEventListener("click", function(event){
 
            setInnerText("seat-number", count);
            setInnerText("highest-seat", seatCount);
+
+           event.target.style.backgroundColor="#1DD100";
            
 
            const price=event.target.parentNode.parentNode.parentNode.parentNode.childNodes[15].childNodes[3].childNodes[3].childNodes[3].childNodes[1].innerText
            
 
            const seatName=event.target.innerText
-            const economy=event.target.economy;
-
+          
            const selectedContainer=document.getElementById("ticket-cost");
 
            const div=document.createElement("div")
@@ -27,7 +28,7 @@ btn.addEventListener("click", function(event){
            h3.innerText=seatName;
             
            const h4=document.createElement("h4")
-             h4.innerText=economy;
+             h4.innerText="Economy";
            const p=document.createElement("p")
            p.innerText=price;
 
@@ -49,8 +50,18 @@ btn.addEventListener("click", function(event){
            const convertedGrandTotal=parseInt(grandTotal);
            const sum2=convertedGrandTotal+parseInt(price);
            setInnerText("grand-total", sum2);  
-           
-            
+
+          
+
+
+               if(count>4){
+                alert("you already selected 4 seat")
+               }
+               else{
+                btn.removeEventListener("click",arguments.callee);
+               }
+              
+
              
            
 })
@@ -65,22 +76,3 @@ function setInnerText(id,value){
 
 
 
-// couponBtn.addEventListener("click",()=>{
-//   let couponBtn=document.getElementById("couponBtn");
-//   let couponInput=document.getElementById("couponInput");
-//   let couponLabel=document.getElementById("coupon-level")
-
-//   let inputValue=couponInput.value;
-    
-//   if(inputValue==="NEW15"){
-//     let totalMoney=getValue("total-price");
-//     let discount=totalMoney*15/100;
-//     setValue("discountMoney", discount);
-//     let offer=totalMoney-(totalMoney*15)/100;
-   
-//     setValue("grandTotal",offer);
-
-//   }
-
-
-// })

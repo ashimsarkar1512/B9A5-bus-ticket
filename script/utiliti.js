@@ -1,13 +1,3 @@
-function setBackgroundColor(id) {
-  const element = document.getElementById(id)
-  element.classList.add('bg-[#1DD100]');
-}
-
-document.addEventListener('click', setBackgroundColor);
-
-
-
-
 
 
 function applycoupon() {
@@ -36,19 +26,10 @@ document.getElementById('Phone-Num').addEventListener('keyup',function(){
 })
 
 
-// function hideElementById(elementId){
-//   const element=document.getElementById(elementId)
-//   element.classList.add('hidden');
-// }
-// function showElementById(elementId){
-//   const element=document.getElementById(elementId)
-//   element.classList.remove('hidden');
-// }
 
-// function play(){
-//   hideElementById('next-button');
-//   showElementById('show-screen');
-// }
+
+
+
 
 
 
