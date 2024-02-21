@@ -6,6 +6,7 @@ let seatCount=40;
 
 for(const btn of allBtn){
 btn.addEventListener("click", function(event){
+  
             count=count+1
             seatCount=seatCount-1
             priceCount= priceCount+550;
@@ -14,6 +15,8 @@ btn.addEventListener("click", function(event){
            setInnerText("highest-seat", seatCount);
 
            event.target.style.backgroundColor="#1DD100";
+
+           event.target.setAttribute("disabled", false)
            
 
            const price=event.target.parentNode.parentNode.parentNode.parentNode.childNodes[15].childNodes[3].childNodes[3].childNodes[3].childNodes[1].innerText
@@ -49,23 +52,22 @@ btn.addEventListener("click", function(event){
            const  grandTotal=document.getElementById("grand-total").innerText;
            const convertedGrandTotal=parseInt(grandTotal);
            const sum2=convertedGrandTotal+parseInt(price);
-           setInnerText("grand-total", sum2);  
+           setInnerText("grand-total", sum2); 
+           
+           if(count>4){
+            alert("you already selected 4 seat");
+            return;
+           }
+        
 
-          
-
-
-               if(count>4){
-                alert("you already selected 4 seat")
-               }
-               else{
-                btn.removeEventListener("click",arguments.callee);
-               }
               
 
              
            
 })
 }
+
+
 
 function setInnerText(id,value){
   document.getElementById(id).innerText=value;

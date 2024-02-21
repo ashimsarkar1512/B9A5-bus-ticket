@@ -25,6 +25,12 @@ document.getElementById('Phone-Num').addEventListener('keyup',function(){
   document.getElementById('modal').removeAttribute('disabled')
 })
 
+document.getElementById("apply-btn").addEventListener("click", function(){
+  
+  document.getElementById("coupon-field").add('hidden');
+  
+});
+
 
 
 
